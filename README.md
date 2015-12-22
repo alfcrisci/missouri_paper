@@ -132,8 +132,7 @@ In this case, the challenge was to predict the volume of the audience attending 
 Table XF9 prediction model with following Full amount of weekly tweets counts:TW_RTW_XF9_week, of native tweets TW_XF9_week and their ratio RTW_XF9_week_ratio
 
 
-![XF9model]((graphs/prediction_Sky.png) 
-
+![XF9model](https://github.com/alfcrisci/missouri_paper/blob/master/graphs/prediction_Sky.png) 
 
 
 Figure 7: Audience Prediction of  channel Xfactor9 of Twitter Vigilance.
