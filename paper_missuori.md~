@@ -72,7 +72,7 @@ Coefficients:          | 0.8274| -0.2741 |  -1.0441 | 0.0747  |  0.8311       | 
 s.e.                   | 0.5257|   0.3386|  0.5488  |  0.5359 |  0.0636       |      1338.9837|  8380.614             | 8332.086|
 
 
-![expomodeling]((graphs/Expo_modeling_nesi.png) 
+
 
 Figure xxxx: …………………………….. 
 
@@ -133,7 +133,7 @@ In this case, the challenge was to predict the volume of the audience attending 
 Table xxxx: …………………………….. 
 
 
-![XF9model]((graphs/prediction_Sky.png) 
+
 
 
 
