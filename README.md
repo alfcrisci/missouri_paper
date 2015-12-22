@@ -50,22 +50,23 @@ In this case, where the prediction of number of visitors is expected as in simil
 |**alberodellavita_ratio**  | -64255.7817| 15941.8328| -4.0306|             **0.0002** ***|
 |**RaiExpo_ratio**          | -18431.4667|  5123.0176| -3.5978|             **0.0007** ***|
 
-Table  EXPO2015 Diagnostic model summary
+Table  EXPO2015 Diagnostic model summary table showing coefficient and Wald's test significance ( Acceptance p-value level= 0.05).
 
-Expo2015 presences show a heavy association with the day-of-week as we expeted in this kind of events within Saturday as maximum and Monday the minimum. Hashtag #alberodellavita is one of strong twitter's message content associated to the number of visitors in the event. Massive amount of EXPO2015 channel #expo2015 and #RaiExpo are also predicitve. The ones are the predicotrs seleceted in terms of ratio, that is measure of their social media amplification.
-Temporally EXPO2015 work data matrix starts at 01-08-2015 and ends at 31-10-2015. The training period to build-up a predictive model to be teste are individuated in the first 71 days of the series available, and test period cover (11-10-2015/31-27/10/2015) the last two weeks event. We fifty days as a good predctive horizon for a model validation, considering that the this predictand show non-stationary behaviour in reason to the growing trend of visitors occuring along the last two month. The order of general ARIMA modeling and the corresponded six parameters (p,d,q,P,D,Q)  are indicated by using auto.arima() function of R forecast package and the univariate daily time series of visitors. The validation of prediction is based on the root mean square error (RMSE) applied on values predicted for test period and the correpondent observed ones. 
-The final seasonal ARIMAX model  includes also a weekly periodicity (p=7), and have  shown the better predictive accuracy in terms of RMSE respect to the same univariate seasonal ARIMA model that have worked without covariates. The selected linear regressive model, used in diagnosis step, doesn't show a good predictive perfomance, and in this case, can't to be used in predicitive way ( see tab XX). Formally covariates in ARIMA models, obtained from the previous the predictor's selection,have the following form: 
+Expo2015 presences show a heavy association with the day-of-week, and it's quite in this kind of events.. Saturday is the day that show the maximum impact and Monday the day with minimum one. The hashtag #alberodellavita is the most strong twitter's content associated with the number of visitors in the event.It is linked to see a aestethic manufacts in exposition area and more appreciated by visitors. The comprehensive amount of EXPO2015 channel stated by #expo2015 hashtag  and the televisive social amplication tagged by #RaiExpo are also good predictor. These  are the predictors selected, in their derived form by using the  ratio retweet/native tweets of volume. The ratio metric confirms to be a measure of social media amplification of the twitter hashtag streams.
+EXPO2015 work data matrix is a set of time series that starts at 01-08-2015 and ends at 31-10-2015. The training period to build-up the predictive model, that  to be tested, are individuated in the first 71 days of the series, whiletest period covers the last two weeks of the event (11-10-2015/31-27/10/2015). We consider that fifty days as a good predictive horizon for a suitable model validation, considering that this kind of predictand shows often a non-stationary behaviour in time. The reason could be searched in local trend's presence as  Expo2015 tweets ha ve showed in the last two month of event.
+The order of ARIMA modeling and the corresponded six parameters (p,d,q,P,D,Q) , in the work was provided thanks to auto.arima() function of R forecast package by using the univariate daily time series of visitors. 
+The validation of predictions is based on the root mean square error (RMSE) metric that be applied on the predicted values and the correpondent observed ones related to test period. 
+The final seasonal ARIMAX model  includes weekly periodicity (p=7) and have shown the best predictive accuracy in terms of RMSE face to the analogue univariate seasonal ARIMA model that have worked without covariates. The selected linear regressive model, obtained in diagnosis and selection step, didn't shown a good predictive perfomance in this case and can't to be used in operative way ( see tab XX). Formally covariates in ARIMA models are a weighting scheme for autoregressive terms and have the following form: 
 
-                                                                     (1)
+                                                                     (Eq 1)
 
-The order of final ARIMAX model are indicated by the following parameter p=2,d=1,q=2 and  P=1,D=0,Q=0 for seasonal part of model. The one take form formally:
+The order of  ARIMA-ARIMAX model found are p=2,d=1,q=2 and  P=1,D=0,Q=0 for the seasonal part of model. The predictive model, with co-regressors could be represented as:
                                                                     
-                                                                     (2)
-
+                                                                     (Eq 2)
 
 
 Where: ,  are the autoregressive components weighting factors;  seasonal weighting factor at 7 days; ,  the moving average weighting factors;  is an independent variable with normal distribution and zero mean. Thus, by substituting (2) in (1), it is possible to obtain the equation to estimate  with respect the past measures,\beta is the vector of future exogenous covariables; 
-The table of final ARIMAX Model estimates are:
+The table of the final  predictive ARIMAX Model estimates are:
 
 ARIMA(2,1,2)(1,0,0)[7] | ar1   |     ar2 |    ma1   |     ma2 |   sar1        | RaiExpo_ratio | alberodellavita_ratio | expo2015_ratio|
 Coefficients:          | 0.8274| -0.2741 |  -1.0441 | 0.0747  |  0.8311       |      110.3563 | -20445.657            | 6155.865|
@@ -74,10 +75,9 @@ s.e.                   | 0.5257|   0.3386|  0.5488  |  0.5359 |  0.0636       | 
 
 ![expomodeling]((graphs/Expo_modeling_nesi.png) 
 
-Figure xxxx: …………………………….. 
+Figure xxxx Expo2015 time series predicitons and observed.
 
-The figure XXX reports the comparison among the four models used in this case and the reported time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z is that presents the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
-
+The figure XXX reports the comparison among the four models used in this case and the reported time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z have the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
 
 Predictive Model ( Order) |RMSE |Mean error | Period| 
 Multiple Linear regression | 17113,91 | - | Training period: 1 August to 10 October|
@@ -85,7 +85,7 @@ Multiple Linear regression | 71887,68 | -38788,22| Test period : 11th to 27 Octo
 ARIMA(2,1,2)(1,0,0)[7] | 16581,3 | -9929,00| Test period : 11th to 27 October|
 ARIMAX(2,1,2)(1,0,0)[7]+Z| 14102,71 |-3752,27| Test period : 11th to 27 October|
 
-Table xxxx: …………………………….. 
+Table ARIMA coefficients table. 
 
 
 #### Case Study on X Factor 9 Italy, 2015: predicting the audience
