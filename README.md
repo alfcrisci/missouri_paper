@@ -74,8 +74,7 @@ Coefficients:          | 0.8274| -0.2741 |  -1.0441 | 0.0747  |  0.8311       | 
 s.e.                   | 0.5257|   0.3386|  0.5488  |  0.5359 |  0.0636       |      1338.9837|  8380.614             | 8332.086|
 
 
-![expomodeling]((graphs/Expo_modeling_nesi.png) 
-
+[[https://github.com/alfcrisci/missouri/blob/master/graphs/Expo_modeling_nesi.png|alt=octocat]]
 Figure xxxx Expo2015 time series predicitons and observed.
 
 The figure XXX reports the comparison among the four models used in this case and the reported time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z have the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
