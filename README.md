@@ -69,21 +69,22 @@ The order of  ARIMA-ARIMAX model found are p=2,d=1,q=2 and  P=1,D=0,Q=0 for the 
 Where: ,  are the autoregressive components weighting factors;  seasonal weighting factor at 7 days; ,  the moving average weighting factors;  is an independent variable with normal distribution and zero mean. Thus, by substituting (2) in (1), it is possible to obtain the equation to estimate  with respect the past measures,\beta is the vector of future exogenous covariables; 
 The table of the final  predictive ARIMAX Model estimates are:
 
-ARIMA(2,1,2)(1,0,0)[7] | ar1   |     ar2 |    ma1   |     ma2 |   sar1        | RaiExpo_ratio | alberodellavita_ratio | expo2015_ratio|
-Coefficients:          | 0.8274| -0.2741 |  -1.0441 | 0.0747  |  0.8311       |      110.3563 | -20445.657            | 6155.865|
-s.e.                   | 0.5257|   0.3386|  0.5488  |  0.5359 |  0.0636       |      1338.9837|  8380.614             | 8332.086|
-
+| ARIMA(2-1-2)(1-0-0)[7] | ar1    | ar2     | ma1     | ma2    | sar1   | #RaiExpo_ratio | #alberodellavita_ratio | #expo2015_ratio |
+|------------------------|--------|---------|---------|--------|--------|---------------|-----------------------|----------------|
+| Coefficients           | 0.8274 | -0.2741 | -1.0441 | 0.0747 | 0.8311 | 110.3563      | -20445.657            | 6155.865       |
+| Standard Errors        | 0.5257 | 0.3386  | 0.5488  | 0.5359 | 0.0636 | 1338.9837     | 8380.614              | 8332.086       |
 
 [[https://github.com/alfcrisci/missouri/blob/master/graphs/Expo_modeling_nesi.png|alt=octocat]]
 Figure xxxx Expo2015 time series predicitons and observed.
 
 The figure XXX reports the comparison among the four models used in this case and the reported time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z have the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
 
-Predictive Model ( Order) |RMSE |Mean error | Period| 
-Multiple Linear regression | 17113,91 | - | Training period: 1 August to 10 October|
-Multiple Linear regression | 71887,68 | -38788,22| Test period : 11th to 27 October|
-ARIMA(2,1,2)(1,0,0)[7] | 16581,3 | -9929,00| Test period : 11th to 27 October|
-ARIMAX(2,1,2)(1,0,0)[7]+Z| 14102,71 |-3752,27| Test period : 11th to 27 October|
+| Predictive Model ( Order)  | RMSE     | Mean error | Period                                  |
+|----------------------------|----------|------------|-----------------------------------------|
+| Multiple Linear regression | 17113.91 | -          | Training period: 1 August to 10 October |
+| Multiple Linear regression | 71887.68 | -38788.22  | Test period : 11th to 27 October        |
+| ARIMA(2.1.2)(1.0.0)[7]     | 16581.3  | -9929.00   | Test period : 11th to 27 October        |
+| ARIMAX(2.1.2)(1.0.0)[7]+Z  | 14102.71 | -3752.27   | Test period : 11th to 27 October        |
 
 Table ARIMA coefficients table. 
 
