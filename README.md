@@ -1,15 +1,14 @@
 ## Predicting Presences and Audience using Twitter Based Metrics
 
 
-**Alfonso Crisci**(3), **Valentina Grasso**(2,3), **Simone Menabeni** (1), **Paolo Nesi**(1), **Gianni Pantaleo ** (1)
+**Alfonso Crisci**(3), **Valentina Grasso**(2,3), **Simone Menabeni** (1), **Paolo Nesi**(1), **Gianni Pantaleo** (1)
 
 
 
 [1] DISIT Lab, Distributed [Systems and internet | Data Intelligence and] Technologies Lab
-Dep. of Information Engineering (DINFO), University of Florence, Italy, Fax: 0039-055-2758570, tel: 0039-3355668674,
-http://www.disit.dinfo.unifi.it, http://www.disit.org/tv, paolo.nesi@unifi.it
+Dep. of Information Engineering (DINFO), University of Florence, Italy, Fax: 0039-055-2758570, tel: 0039-3355668674, http://www.disit.dinfo.unifi.it, http://www.disit.org/tv, paolo.nesi@unifi.it
 
-[2] LAMMA Consortium, Tuscany Region-CNR, Sesto Fiorentino, Italy, grasso@lamma.rete.toscana.it ,v.grasso@ibimet.cnr.it, Fax: 0039-055-444083, tel: 0039-055-4483068, http://www.lamma.rete.toscana.it
+[2] LAMMA Consortium, Tuscany Region-CNR, Sesto Fiorentino, Italy, grasso@lamma.rete.toscana.it, v.grasso@ibimet.cnr.it, Fax: 0039-055-444083, tel: 0039-055-4483068, http://www.lamma.rete.toscana.it
 
 [3] CNR IBIMET National Research Council, Firenze, Italy,.a.crisci@ibimet.cnr.it Fax: 0039-055-308910, tel: 0039-0553033711, http://www.ibimet.cnr.it
 
@@ -17,7 +16,7 @@ http://www.disit.dinfo.unifi.it, http://www.disit.org/tv, paolo.nesi@unifi.it
 ### Abstract
 
 The predictive skill of Twitter data have been already put in evidence in different fields: business, health, market and many other. This specific feature is based on the use of volume metrics calculated on tweet counts of specific twitter stream retrieved by single/multiple query thanks to TwitterVigilance platform. Preliminary analysis and opportune metric definitions are ever required to feed useful statistical predictive  models face to the aim of sociological quantitative prediction. In this work some Twitter-based metrics have been identified and investigate in order to able reliable predictions in two different cases: (i) the number of visitors at EXPO2015, in Milan (Italy); (ii) the assessement of audience of a popular television programme (i.e., X Factor season 9 in Italy) where people are highly involved trough a  participative support of media actors by using Twitter's posts. All results provided   have been framed and validated to  obtain the maximum in terms of prediction's suitability, putting in evidence which are the best way to manage and to exploit the twitter data predictive skills. 
-Concerning the attendees in a large event continuos scenario, as EXPO2015, predictive models are  based on a preliminary identication of best predictor and a similar approach is followed XF9 audience's prediction. Moreover, the paper also shows the importance of lagged twitter based metrics, intrisically taking into account with the adoption of ARIMA-ARIMAX modeling in EXPO2015 case, on the basis of data collected during the days before the event itself as in XF9 case. The positive ……….. also provides a strong correlation with the identification of the winner of the X Factor 9. All experiments reported have been based on the collected data via TwitterVigilance, a tool developed and adopted in some smart city projects and presented in this this paper.
+Concerning the attendees in a large event continuos scenario, as EXPO2015, predictive models are  based on a preliminary identication of best predictor and a similar approach is followed XF9 audience's prediction. Moreover, the paper also shows the importance of lagged twitter based metrics, intrisically taking into account with the adoption of ARIMA-ARIMAX modeling in EXPO2015 case, on the basis of data collected during the days before the event itself as in XF9 case. The positive sentiment score, assesed by platform also provides a strong indication to perform the identification of the winner of the X Factor 9. All experiments reported have been based on the collected data via TwitterVigilance, a tool developed and adopted in some smart city projects and presented in this this paper.
 
 
 ............
@@ -51,10 +50,11 @@ In this case, where the prediction of number of visitors is expected as in simil
 |**alberodellavita_ratio**  | -64255.7817| 15941.8328| -4.0306|             **0.0002** ***|
 |**RaiExpo_ratio**          | -18431.4667|  5123.0176| -3.5978|             **0.0007** ***|
 
-Table xxxx: Diagnostic model EXPO2015 summary
+Table  EXPO2015 Diagnostic model summary
 
- EXPO2015 work data matrix starts at 01-08-2015 and ends at 31-10-2015. The training period are individuated in the first 71 days of the series available, and test period (11-10-2015/31-27/10/2015) are the final two week period of event.The order of model and the corresponded six parameter p,d,q,P,D,Q parameters are obtained thanks to auto.arima() function of R forecast package by using the daily visitors' data. The validation's metric adopted is the root mean square error (RMSE) applied on test period's predictions and the correpondent observed data. 
-The final seasonal ARIMAX model individuate, includes  weekly periodicity (p=7), and have  shown the better predictive accuracy in terms of RMSE respect to the same univariate seasonal ARIMA model that have worked without covariates. The selected linear regressive model, used in diagnosis step, doesn't show a good predictive perfomance, and in this case, can't to be used in predicitive way ( see tab XX). Formally covariates in ARIMA models, obtained from the previous the predictor's selection,have the following form: 
+Expo2015 presences show a heavy association with the day-of-week as we expeted in this kind of events within Saturday as maximum and Monday the minimum. Hashtag #alberodellavita is one of strong twitter's message content associated to the number of visitors in the event. Massive amount of EXPO2015 channel #expo2015 and #RaiExpo are also predicitve. The ones are the predicotrs seleceted in terms of ratio, that is measure of their social media amplification.
+Temporally EXPO2015 work data matrix starts at 01-08-2015 and ends at 31-10-2015. The training period to build-up a predictive model to be teste are individuated in the first 71 days of the series available, and test period cover (11-10-2015/31-27/10/2015) the last two weeks event. We fifty days as a good predctive horizon for a model validation, considering that the this predictand show non-stationary behaviour in reason to the growing trend of visitors occuring along the last two month. The order of general ARIMA modeling and the corresponded six parameters (p,d,q,P,D,Q)  are indicated by using auto.arima() function of R forecast package and the univariate daily time series of visitors. The validation of prediction is based on the root mean square error (RMSE) applied on values predicted for test period and the correpondent observed ones. 
+The final seasonal ARIMAX model  includes also a weekly periodicity (p=7), and have  shown the better predictive accuracy in terms of RMSE respect to the same univariate seasonal ARIMA model that have worked without covariates. The selected linear regressive model, used in diagnosis step, doesn't show a good predictive perfomance, and in this case, can't to be used in predicitive way ( see tab XX). Formally covariates in ARIMA models, obtained from the previous the predictor's selection,have the following form: 
 
                                                                      (1)
 
