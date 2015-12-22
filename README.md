@@ -74,10 +74,11 @@ The table of the final  predictive ARIMAX Model estimates are:
 | Coefficients           | 0.8274 | -0.2741 | -1.0441 | 0.0747 | 0.8311 | 110.3563      | -20445.657            | 6155.865       |
 | Standard Errors        | 0.5257 | 0.3386  | 0.5488  | 0.5359 | 0.0636 | 1338.9837     | 8380.614              | 8332.086       |
 
-[[https://github.com/alfcrisci/missouri/blob/master/graphs/Expo_modeling_nesi.png|alt=octocat]]
-Figure xxxx Expo2015 time series predicitons and observed.
+![Expo](https://github.com/alfcrisci/missouri_paper/blob/master/graphs/Expo_modeling_nesi.png) 
 
-The figure XXX reports the comparison among the four models used in this case and the reported time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z have the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
+Figure Expo2015 time series predictions and observed.
+
+The previous figure reports the comparison among the four models,used in this case,and the time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z have the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
 
 | Predictive Model ( Order)  | RMSE     | Mean error | Period                                  |
 |----------------------------|----------|------------|-----------------------------------------|
@@ -86,7 +87,7 @@ The figure XXX reports the comparison among the four models used in this case an
 | ARIMA(2.1.2)(1.0.0)[7]     | 16581.3  | -9929.00   | Test period : 11th to 27 October        |
 | ARIMAX(2.1.2)(1.0.0)[7]+Z  | 14102.71 | -3752.27   | Test period : 11th to 27 October        |
 
-Table ARIMA coefficients table. 
+Table ARIMA coefficients and standard errors.
 
 
 #### Case Study on X Factor 9 Italy, 2015: predicting the audience
