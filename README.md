@@ -87,7 +87,7 @@ The previous figure reports the comparison among the four models,used in this ca
 | ARIMA(2.1.2)(1.0.0)[7]     | 16581.3  | -9929.00   | Test period : 11th to 27 October        |
 | ARIMAX(2.1.2)(1.0.0)[7]+Z  | 14102.71 | -3752.27   | Test period : 11th to 27 October        |
 
-Table ARIMA coefficients and standard errors.
+Table  Model validation summaries of model used. 
 
 
 #### Case Study on X Factor 9 Italy, 2015: predicting the audience
