@@ -50,7 +50,7 @@ In this case, where the prediction of number of visitors is expected as in simil
 |**alberodellavita_ratio**  | -64255.7817| 15941.8328| -4.0306|             **0.0002** ***|
 |**RaiExpo_ratio**          | -18431.4667|  5123.0176| -3.5978|             **0.0007** ***|
 
-Table  EXPO2015 diagnostic model summary table showing coefficient and Wald's test significance ( Acceptance p-value level= 0.05).
+Table  EXPO2015 diagnostic model summary table showing coefficients, their standard errors and the p-values of Wald's test significance ( Null hypothesis No association. H1 acceptance p-value level = 0.05).
 
 Expo2015 presences show a heavy association with the day of week, and it's quite in this kind of events. Saturday is the day that show the maximum impact and Monday the day with minimum one on EXPO2015's precence of visitors. The hashtag #alberodellavita is the most strong twitter's content associated with the daily event populatity.It is linked to the view of  aestethic manufacts inside the exposition area that area ppreciated by visitors becoming a milestone in users' conversations. The comprehensive amount of EXPO2015 channel, stated by #expo2015 hashtag,  and the televisive social tag as#RaiExpo are also good predictors. The ones with the first cited  are the predictors selected, and are used by using their  ratio retweet/native tweets of volume. The ratio metric confirms that to be a measure of social media amplification of the twitter hashtag streams.
 If this case seasonal ARIMA models are used and is not to be necessary the use of calendar variables as predictors,but their role is important in diagnostic phase because help to individuates other classes of predictors.
