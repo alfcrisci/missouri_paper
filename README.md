@@ -76,7 +76,7 @@ The table of the final  predictive ARIMAX Model estimates are:
 
 ![Expo](https://github.com/alfcrisci/missouri_paper/blob/master/graphs/Expo_modeling_nesi.png) 
 
-Figure Expo2015 time series predictions and observed.
+Figure Expo2015 time series predictions and referenced data.
 
 The previous figure reports the comparison among the four models,used in this case,and the time series of EXPO2015 visitors: prediction  of Linear Model ( ML  model): the univariate ARIMA (2,1,2) model without seasonality; the ARIMA(2,1,2)(1,0,0)[7] ARIMA model without covariate, and ARIMAX(2,1,2)(1,0,0)[7] with exogenous covariables. From the results reported in Table XXX, it is evident that the selected model ARIMAX(2,1,2)(1,0,0)[7]+Z have the lower RMSE (root mean square error) with respect the real presences in the prediction period. 
 
