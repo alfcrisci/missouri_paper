@@ -59,11 +59,11 @@ The order of ARIMA modeling and the corresponded six parameters (p,d,q,P,D,Q) , 
 The validation of predictions is based on the root mean square error (RMSE) metric that be applied on the predicted values and the correpondent observed ones during the test period. 
 The final seasonal ARIMAX model  includes weekly periodicity (p=7) and have shown the best predictive accuracy in terms of RMSE face to the analogue univariate seasonal ARIMA model that have worked without covariates. The selected linear regressive model, obtained in diagnosis and selection step, didn't shown a good predictive perfomance in this case and can't to be used in operative way ( see tab XX). Formally covariates in ARIMA models are a weighting scheme for autoregressive terms and have the following form: 
 
-                                                                     (Eq 1)
+                                                                     (Equation 1)
 
 The order of  ARIMA-ARIMAX model found are p=2,d=1,q=2 and  P=1,D=0,Q=0 for the seasonal part of model. The predictive model, with co-regressors could be represented as:
                                                                     
-                                                                     (Eq 2)
+                                                                     (Equation 2)
 
 
 Where: ,  are the autoregressive components weighting factors;  seasonal weighting factor at 7 days; ,  the moving average weighting factors;  is an independent variable with normal distribution and zero mean. Thus, by substituting (2) in (1), it is possible to obtain the equation to estimate  with respect the past measures,\beta is the vector of future exogenous covariables; 
@@ -111,15 +111,15 @@ XF9 channel on TwitterVigilance collected about 1.6 millions of tweets in Italia
 
 Figure 6: Trends of searches twitter volumes for the observed major hashtags on channel Xfactor9 of Twitter Vigilance.
 
-#### Prediction XF9  audience model. 
+#### Prediction of XF9  audience model. 
 
-In this case, the challenge was to predict the volume of the audience attending the TV event in the prime time one a week. the best predicitive model identification, in reason to the different time data structure and hence of predictions, may follow partially the procedure adopted for EXPO2015 case. In XF9 case it was not possible to identify valid training/test sets in reason to the low numerosity of work matrix, so the second step of ARIMA models set up is avoided and predictions were carried out by using only the best linear model obtained by predictor selection. The form is the same of equation 1.The target variable is represented by the users count declared by Sky Platform, that give the amount of device connected during the events. These data represent a good indicator of audience. The model fitting outcome is summarized by the following table and prediction/observed within interval of confidence ( 95%) are plotted in Figure 7.
+In this case, the challenge was to predict the volume of the audience attending the TV event having two day as predctive horizon. The best predicitive model identification, in reason to the different time data structure of data respect to previous case and the different request of prediction, may follow only partially the procedure previously adopted for EXPO2015 case. In XF9 case it was not possible to identify valid training/test sets in reason to the low numerosity of work matrix, so the second step of ARIMA models set up is avoided and predictions were carried out by using only the best linear model obtained by predictor selection. The form is the same of equation 1.The target variable is represented by the users count declared by Sky Platform, that give the amount of device connected during the events. However these data represent a good indicator of whole TV audience. The model fitting outcome is summarized in the following table and next figure ( Figure 7) predicted and observed data are plotted, within interval of confidence ( 95%)  .
 
          Predictors          |  Model XF9 Sky  coef ( & stderr)  
 ------------- | -------------|---------------------------------|
   **TW_RTW_XF9_week**        |    -22.257 (36.189)             |
      **TW_XF9_week**         |    43.475  (41.810)             |
-  **RTW_XF9_week_ratio**     |    880089.617*** (61948.323)    |
+  **XF9_week_ratio**     |    880089.617*** (61948.323)    |
   
   
  Outcomes         |  Model XF9 Sky  | 
@@ -131,13 +131,13 @@ In this case, the challenge was to predict the volume of the audience attending 
   **RMSE**        |      85919.5    | 
 
 
-Table XF9 prediction model with following Full amount of weekly tweets counts:TW_RTW_XF9_week, of native tweets TW_XF9_week and their ratio RTW_XF9_week_ratio
+**Table** XF9 prediction model. Predictors:  Full amount of: weekly tweets counts (TW_RTW_XF9_week) and native weekly tweets (TW_XF9_week)  and their ratio (XF9_week_ratio).
 
 
 ![XF9model](https://github.com/alfcrisci/missouri_paper/blob/master/graphs/prediction_Sky.png) 
 
 
-Figure 7: Audience Prediction of  channel Xfactor9 of Twitter Vigilance.
+**Figure 7** Audience predictions of Xfactor9 events.
 
 
 Anyway results indicate a reliable perfomance of the simple linear regressive model (R squared =0.996 pvalue Fischer < 0.0001 ). This good results having reference to the use of lagged twitter predictors (RTW_XF9_week_ratio,TW_XF9_week) that are calculated on the week ( Day 1-5) preceding the event. The ratio between retweets and native tweets have shown more predictive sense and it is interpreted as a measure of expectations of people in regard to weekly event that have sure relation with social magnification detected by twitter channel activity.
