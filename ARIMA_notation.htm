@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MathJax TeX Test Page</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+
+General Seasonal Arima $SARIMA(p,d,q)(P,D,Q)_m$ process $X_t$ is the solution of the following equation</p>
+
+<p>$$\Phi(B^m)\phi(B)\nabla_m^D\nabla^d X_t=\Theta(B^m)\theta(B)Z_t$$</p>
+
+<p>where $Z_t$ is the white noise process. $\nabla_mX_t=X_{t}-X_{t-m}$, $\nabla X_t=X_{t}-X_{t-1}$</p>
+Now take your example of $ARIMA(2,1,1)(1,0,0)_7$. This means that
+\begin{align}
+\Phi(B^m)&amp;=\Phi(B^7)=1-\Phi_1B^7\\
+\phi(B)&amp;=1-\phi_1B-\phi_2B\\
+\Theta(B^m)&amp;=\Theta(B^7)=1\\
+\theta(B&amp;)=\nabla_7(1+\theta_1B+\theta_2B^2)\\
+\end{align}
+and $B^nX_t=X_{t-n}$. </p>
+
+<p>So in your case prediction $X_t$ must satisfy the equation  and $\beta$ vector of regressors, fitted by Arima() function of R forecast package that point to the autoregressive part of predicitive equation:
+\begin{align}
+\beta (1-\Phi_1B^7)(1-\phi_1B-\phi_2B)\nabla_5^1X_t=(1+\theta_1B+\theta_2B^2)Z_t
+\end{align}</p>
+</body>
+</html>
+
+
+
